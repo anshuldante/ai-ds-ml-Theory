@@ -1,0 +1,6 @@
+Popular Algorithms:
+  1. Decision Trees
+  2. K-nearest neighbours.
+  3. K-mean Clustering
+  4. Regression
+  5. Naive Bayes
