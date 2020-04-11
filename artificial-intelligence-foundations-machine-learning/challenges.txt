@@ -1,0 +1,4 @@
+1. Making sure that the people in the org can ask interesting questions.
+2. Keeping training and testing data separate: mixing training data into testing data means giving the algo the right answers.
+3. Time investment: not to invest too much time finding the right algo.
+4. Don't be concerned about a high bias towards an algo, it might just make sense to you.
