@@ -1,0 +1,261 @@
+The pathway of Data-Science Projects:
+  1. Planning
+    a. Define goals
+    b. Organise resources
+    c. Coordinate people.
+    d. Schedule Project.
+  2. Wrangling/prepping the data
+    e. Get data
+    f. Clean data
+    g. Explore data
+    h. Refine data
+  3. Modeling
+    i. Create model
+    j. Validate model
+    k. Evaluate model
+    l. Refine model
+  4. Applying
+    m. Present model
+    n. Deploy model
+    o. Revisit model
+    p. Archive assets
+
+The Roles in a data science team:
+  1. Engineer
+    a. Developers and architects
+    b. Focus on hardware and software that make data science possible
+  2. Machine Learning Specialist:
+    a. Extensive work in CS and maths
+    b. Deep Learning
+    c. Artificial Learning
+  3. Researcher
+    a. Focus on domain specific research
+    b. Physics/genetics, medicine, psychology
+    c. Statistical expertise
+  4. Analyst
+    a. Data-to-data tasks
+    b. Web Analytics, SQL, visualisations.
+    c. Good for business decision making
+  5. Manager
+    a. Manage data science projects
+    b. Frame business relevant questions and answers
+    c. Must "Speak data"
+  6. Entrepreneur
+    a. Data-based startups
+    b. Often need all skills including business
+    c. Creativity in planning and execution
+  7. The "UNICORN"
+    a. Also known as a ROCKSTAR or NINJA
+    b.The full stack data scientist who can do it all
+    c. Very rare
+
+How Humans learn:
+  1. Memorisation is hard
+  2. Spotting patterns is easy.
+  3. React well to new situations.
+How Machines Learn:
+  1. Memorisation is easy.
+  2. Spotting patterns is hard
+  3. New situations are challenging.
+
+Teach/Train machines:
+  1. Show the algorithm millions of labeled examples
+  2. The algorithm then finds its own distinctive features
+  3. The algorithm may not be relevant or visible to humans.
+
+Neural Networks
+  1. The theory has existed for years.
+  2. The required computing power has caught up
+  3. The data availability has caught up, primarily due to social media
+
+Data Science without ML:
+  1. Any traditional classification task: Decision trees, kNN, k-mean
+  2. Predictive models
+  3. Sentiment analysis
+
+ML without data Science:
+  1. Can be done without domain expertise
+  2. Better when used in collaboration.
+
+Neural Networks:
+  1. Tiny steps with data leading to amazing analytical results
+  2.
+
+Prescriptive Analysis:
+  1. RCT: randomised controlled trial
+  2. Theoretically simple
+  3. Practically complex in general
+  4. A/B testing for web-design is rather simple.
+
+Good clean data characteristics:
+  1. Column=variable
+  2. Row=case
+  3. One sheet per file
+  4. One level of observation
+
+Untidy Spread sheet:
+  1. Titles
+  2. Images and figures
+  3. Colours as data
+  4. Merged cells
+  5. Sub-tables
+  6. Summary values
+  7. Comments and notes
+
+Further problems with somewhat clean data:
+  1. Meaning of Values and variables
+  2. Missing values
+  3. Misspelled text
+  4. Numbers as text
+  5. Outliers
+  6. Sample Info
+
+Some more challenging input data mediums:
+  1. Print PDFs
+  2. Print tables
+  3. Print Graphs
+  4. Emojis have 10 different ways of representation.
+
+Apps for data analysis:
+  1. JASP
+  2. SPSS
+  3. jamovi
+
+Python:
+  1. Currently the most popular language for Data Science and Machine Learning
+  2. General purpose language
+  3. Easy to learn
+
+R:
+  1. Specifically developed for Data Analysis
+  2. Popular with scientists and researchers.
+
+Tensorflow
+
+MLaaS: Machine Learning as a Service
+  1. Microsoft Azure ML
+  2. Amazon Machine Learning
+  3. Google AutoML
+  4. IBM Watson Analytics
+
+MLaaS Advantages:
+  1. Put analysis where the data is stored
+  2. Flexible Computing Requirements.
+  3. Drag and Drop Interface
+
+Baye's Theorem:
+  posterior probability = probability of data given the hypothesis * prior probability / probability of the data found
+Regression Analysis Pros:
+  1. Flexible Data
+  2. Flexible models
+  3. Easy to interpret.
+
+Trend Analysis:
+  1. Plot a graph
+  2. Find a Function against time
+    a. Linear
+    b. Exponential
+    c. Logarithmic
+    d. Sigmoid
+    e. Sinusoidal
+  3. Change Points
+    1. Look for changes in the resting state of the Data
+    2. Then check for historical events to explain the changes.
+  4. Decomposition
+    a. Take trend over time and break it down into several elements.
+    b. Overall Trend
+    c. Seasonal/cyclic trend
+    d. Random/Noise
+
+Clustering:
+  1. KNN
+    a. Plot the data in a K-dimensional space
+    b. Measure the distances between different points.
+  2. K-Means
+  3. Density models
+  4. Distribution models.
+  5. Linkage clustering models.
+
+Classifying:
+  a. How TO:
+    1. Locate case in k-dimensional space.
+    2. Compare labels to nearby data Points
+    3. Assign the new case to a category
+  b. Algorithms:
+    1. K-Means: assign case to the closest of k centroids.
+    2. KNN: use the most common category of the k closest neighbours of the new case.
+  c. Types:
+    1. Binary: yes/no
+    2. Multiple categories: pics, emails etc.
+    3. Distance measures: euclidian distance etc.
+    4. Compare it to one or more central or centriod Points
+    5. Confidence level
+  d. Correctness of the algo:
+    1. Total accuracy: generic accuracy, may not always work too well
+    2. Sensitivity: the true positivity test: if some data is supposed to be in a category, what's the likely-hood of it getting classified in the correct category.
+    3. Specificity: true negative tests: Cases should only be categorised if they actually belong.
+
+Baye's Theorem: combine data based on Sensitivity, Specificity and base rates.
+
+Anomalies:
+  1. Fraud detection
+  2. Process failure
+  3. Potential value
+
+Outliers:
+  1. Cases that are distant from others.
+  2. Cases that don't follow an expected pattern.
+  3. Cases that match known anomalies.
+
+Algorithms to detect anomalies:
+  1. Regression
+  2. Bayesian analysis
+  3. Hierarchical clustering
+  4. Neural networks
+
+Properties of anomalies
+  1. Rare events: frauds are uncommon which lead to unbalanced models
+  2. Difficult data: biometrics, multimedia, time-Sensitive signatures.
+
+Dimensionality reduction: used in a earlier phase to get the data ready.
+  1. Reduce the number of variables and data
+  2. Try to use a single score to make decisions.
+  3. When you combine many variables and features, the errors seem to cancel out in general
+  4. Reduces the collinearity.
+  5. Improves speed
+  6. Improves generalisability
+  7. Principle component analysis (PCA): take multiple correlated variables and combine then into a single score/component
+  8. Factor analysis: find the underlying common factor which gives rise to individual components.
+
+Feature selection and creation: used after dimension selection and to find the best features to look at.
+  1. Deciding the greatest decision value for a feature:
+    a. Correlation with the outcome: and the ones with bigger correlation have a higher decision value, one variable at a time so can take time and is linear.
+    b. Step-wise regression: put the data points into a computer and let the computer find the decision value: generally considered a bad choice, since variation in data can have huge impact.
+    c. LASSO and Ridge regression:: least absolute shrinkage and selection: more modern ways of regression that better handle flukes of chance variation,
+       give better score for variables' role in the equation and emphasis
+    d. Variable importance: for neural networks.
+
+Things to keep in mind while selecting variables:
+  1. Is it something we can control?
+  2. ROI of the variable: cost vs value
+  3. Is it sensible, does it make sense to be looking at this variable?
+
+Validating models:
+  1. Always check your work.
+  2. Build using training data -> cross-validate using internal testing data -> holdout testing data: 20% of untouched data. This should give you the true test of your model.
+
+Aggression models:
+  1. Combine the results of several different models.
+  2. Take the most common category from the models.
+  3. Average prediction in case of quantitative things.
+  4. Benefits:
+    a. Multiple perspectives
+    b. Find signal and Noise
+    c. More stable estimates
+    d. More generalisable results.
+
+Interpretability is critical!
+Actionable insights!
+  1. Focus on controllable things.
+  2. Think practically: ROI
+  3. Build up: improve over time.
