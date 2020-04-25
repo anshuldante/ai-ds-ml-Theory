@@ -1,6 +1,6 @@
 # ai-ds-ml-theory
 
-A collection of various Course Glossary, notes and exercise files for Artificial Intelligence, Data Science and Machine Learning from LinkedIn Learning
+A collection of various Course Glossary and notes for Artificial Intelligence, Data Science and Machine Learning from LinkedIn Learning
 
 1. artificial-intelligence-foundations-thinking-machines by Doug Rose
 2. artificial-intelligence-foundations-machine-learning by Doug Rose
