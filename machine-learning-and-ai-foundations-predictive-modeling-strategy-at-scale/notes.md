@@ -13,20 +13,21 @@
   * Not all cases are relevant:eg. data with missing emails
   * Going too far back in history causes problems
   * Balancing and partitioning
+----
 ### **Designing a data-set**
   * #### Minimum Data-size
-    * > 1000+ churns
-    * > 1000+ non-churns
-    * > Test and training data
-    * > Overall, it should be 4000 + for a model to be applicable and reliable.
-    * > In general it'll be hard to find the 2000+ churns.
-    * > Many data scientists also suggest to have a validation data-set which takes it to 3000+ churns.
+    * 1000+ churns
+    * 1000+ non-churns
+    * Test and training data
+    * Overall, it should be 4000 + for a model to be applicable and reliable.
+    * In general it'll be hard to find the 2000+ churns.
+    * Many data scientists also suggest to have a validation data-set which takes it to 3000+ churns.
      ##### What if there's not enough data?
-      * > We can skip the validation data.
-      * > We can have a smaller test-data set.
-      * > What if you still don't have 1200+ churns?
+      * We can skip the validation data.
+      * We can have a smaller test-data set.
+      * What if you still don't have 1200+ churns?
   * #### Balancing
-    * > If we have 20,000 frauds and 2,000,000 normal transactions
+    * If we have 20,000 frauds and 2,000,000 normal transactions
     * We must first bring down the number of normal transactions to 20,000 using randomization.
     * Next, it's better to have more data for training than test and validate
     * So we cut it down to 16,000 fraud and 16,000 normal transactions for Training
@@ -76,8 +77,8 @@
     * Knowing the the types of data aggregation needed may not always be obvious.
     * Total, mean, median and count may be common, but the #transactions < 5$ might make sense a little later into the process.
     * It may not always be a great idea to group all interactions of a customer into a single group: 
-      * > just the total minutes for a netflix user may not give enough insight, we may want comedy, documentary, action minutes etc.
-      * > May want to categorize customer purchases by department or by the order total.
+      * just the total minutes for a netflix user may not give enough insight, we may want comedy, documentary, action minutes etc.
+      * May want to categorize customer purchases by department or by the order total.
   * #### Dummy Coding
     * This is important, because if we don't do mappings like these, the model will do it automatically and we won't know what happened. For example the following employment category data gets converted like:
 
@@ -107,14 +108,14 @@
   ![Sample modelling process table](images/modelling_process.png)
   * #### Slow Algorithms:
     * Brute force style calculations
-      * > For example, an ML based algo trying out all possible groups. A stats based approach will have far fewer groups to try out
+      * For example, an ML based algo trying out all possible groups. A stats based approach will have far fewer groups to try out
     * More calculations
-      * > For example a neural net trying out all possible combinations. A stats based approach will try out only a few combinations.
+      * For example a neural net trying out all possible combinations. A stats based approach will try out only a few combinations.
     * More models
-      * > Bagged trees: many combinations of decision trees then taking the average score.
-      * > Random forests
-      * > XGBoost
-      * > Lots of individual models
+      * Bagged trees: many combinations of decision trees then taking the average score.
+      * Random forests
+      * XGBoost
+      * Lots of individual models
         * Tens of thousands is SKUs
         * Hundreds of store locations
         * One model per store per SKU.
@@ -128,11 +129,11 @@
     * Modelling with missing data:
       * Be deployment focused.
       * Maybe the data just doesn't belong
-        * > No doc rule for taking loans if you have a good credit score: not used anymore, so has no place in the new scoring model.
+        * No doc rule for taking loans if you have a good credit score: not used anymore, so has no place in the new scoring model.
       * What will happen to missing data at scoring?
       * Be creative:
-        * > In a cell-phone usecase, new subscribers didn't have any history and hence the variables dependent on past data were not available.
-        * > To overcome this, the team built 2 models, 1 for regular customer and another for the new ones.
+        * In a cell-phone usecase, new subscribers didn't have any history and hence the variables dependent on past data were not available.
+        * To overcome this, the team built 2 models, 1 for regular customer and another for the new ones.
 ----
 ### **Scoring**
   * #### Traditional Models:
@@ -141,14 +142,14 @@
     * Easy to migrate.
     * Still the most common choice.
     * Statistical models:
-      * > Algebra like formulas
-      * > One Coefficient per variable
+      * Algebra like formulas
+      * One Coefficient per variable
       * ![Sample Logistic regression Formula](images/logistical_regression_sample_formula.png)
-      * > As can be seen, there's only coefficient per variable
+      * As can be seen, there's only coefficient per variable
     * Decision trees:
-      * > Simple if/then structure
-      * > One rule per subgroup or segment
-      * ![Sample Decision Tree](images/logistical_regression_sample_formula.png)
+      * Simple if/then structure
+      * One rule per subgroup or segment
+      * ![Sample Decision Tree](images/decision_tree_sample.png)
   * #### Black box models:
     * Are just models that have become very complex, so it becomes hard to tell a story about them i.e. they can't be interpreted very easily.
     * But they are very accurate and they come in multiple forms
@@ -157,8 +158,8 @@
   * #### Ensemble models:
     * A collection of models, could be a handful, could be 40-50
     * You build individual models and then combine them in some way.
-      * > Average: Take the average of the scores of the individual models.
-      * > Stacking: build models, take their scores and them a final model uses their predictions to build the final predictions.
+      * Average: Take the average of the scores of the individual models.
+      * Stacking: build models, take their scores and them a final model uses their predictions to build the final predictions.
 ----
 ### **Deployment**
   * #### Batch vs Real-Time Scoring:
@@ -170,9 +171,9 @@
     * When did you create the score?
     * When did you send the offer?
   * Real-time is many times more costlier than Batch, but we have to keep the following things in mind: 
-    * > What is the increase in cost? Do we have the budget for it?
-    * > Is it mission critical? After these 2, it's assumed that realtime > batch
-    * > How often do the variables change? For ex. if the scores are only dependent monthly statements, there is no need for generating the scores nightly.
+    * What is the increase in cost? Do we have the budget for it?
+    * Is it mission critical? After these 2, it's assumed that realtime > batch
+    * How often do the variables change? For ex. if the scores are only dependent monthly statements, there is no need for generating the scores nightly.
     * What is the increase in accuracy? For ex. if your model is dependant on monthly and daily changing variables, you build the model on the slow variables and then slow and fast both. This tells you the accuracy difference between the slow and fast variables
     * What is the natural rhythm of the business?
   * #### Data Prep & Scoring:
@@ -207,10 +208,10 @@
   * #### Model Rebuilding
     * How often should we rebuild the model?
       * Infrequent:
-        * > Monthly score
-        * > Annual rebuild
+        * Monthly score
+        * Annual rebuild
       * Frequent: (will be 5-10 times costlier than infrequent)
-        * > Real-time score
+        * Real-time score
         * Nightly rebuild of the model
     * To decide this:
       * Measure the increase in accuracy
