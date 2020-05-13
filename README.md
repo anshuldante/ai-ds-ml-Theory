@@ -10,3 +10,4 @@ A collection of various Course Glossary and notes for Artificial Intelligence, D
 6. data-science-foundations-fundamentals-6 by Barton Poulson
 7. machine-learning-and-ai-foundations-predictive-modeling-strategy-at-scale by Keith McCormick
 8. the-essential-elements-of-predictive-analytics-and-data-mining by Keith McCormick
+9. machine-learning-and-ai-foundations-classification-modeling by Keith McCormick
