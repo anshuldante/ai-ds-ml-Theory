@@ -219,3 +219,77 @@
 ----
 
 ## **Common Modeling Challenges**
+
+* ### Imbalanced target categories
+
+  * This is common and impacts almost all of the algorithms
+  * In the titanic usecase, the split is 62% died vs 38% survived
+  * We reduce the number of the dead by removing some at random to bring the data split to 50-50.
+  * The bad split leads to having good rules for the higher percentage group but not for the others. This can happen quite often in **Payment Fraud** scenarios.
+  * Balancing is done only on training data not on test data, with this we get a real world picture of the performance of our model.
+
+* ### Interactions
+
+  * When the relationship between two variables depends on a third.
+  * The following linear regression plot on starting salaries vs education level clearly shows a striking difference between the trends for men and women, so the variable **gender** has to be included since the primary relationship is affected by it.
+  * ![Linear regression Salary vs Education](images/lin_reg_sal_edu_sex.png)
+  * Diabetes risk: although weight is the most prominent variable, height can not be ignored, as evident from the following decision tree.
+  * ![Decision Tree Diabetes Risk](images/dec_tree_diabetes_risk.png)
+  * Combining variables can be a great way to reduce complexity, eg. like replacing height and weight with BMI. Especially in case of decision trees, we're making fewer segments, which allows us to have more data for other inputs.
+  * ![Decision Tree Diabetes Risk using BMI](images/dec_tree_diabetes_risk_bmi.png)
+  * If the model is not working as well as you want it to be, this might be one of the reasons.
+  * Curvilinearity is a special kind of interaction
+  * Some techniques will make you create new interaction terms.
+  * Some others address interactions but in hidden ways: neural net
+  * Trees are one of the easiest ways to find interactions.
+
+* ### Missing data
+
+  * Decision trees are the only exception to the rule
+  * List-wise deletion is the most common
+  * Be careful when trees consistently, you'll want to check how many records were actually run by the other algorithms due to missing data. People don't always realize this.
+  * Imputation
+    * Can be as simple as replacing the mean
+    * Can be as complex as a neural network, if age is missing, you might use all of the other variables to predict the **age** value.
+    * Too important to leave to chance, there's a big difference between 2% and 30%.
+  * These are not the only solutions, in some cases, you might want to build a model for complete data and another one from incomplete data.
+
+* ### Bias-variance trade-off and overfitting
+
+  * High bias:
+    * When a model is not **flexible** enough to get a sufficient signal i.e. not accurate enough. Eg. linear regression works only if there are linear relationships, if there's curvilinearity or variable interactions, it just won't work. In contrast, neural nets are inherently more flexible but they are a black box and complex.
+    * Under fit.
+  * High variance:
+    * Model is too sensitive, tis' picking up a lot of noise.
+    * If that's happening in training data, it'll do a lot worse in test data.
+    * It's generalizing poorly.
+    * Over fit.
+  * You'll want to find a balance between the two situations.
+  * If you have high bias:
+    * You might have to consider adding interactions.
+    * Better address curvilinearity.
+    * Or might just have to move to more complex algorithms which handle these issues better.
+    * Might need to add more input variables.
+    * Grow more aggressively.
+  * If you have high variance
+    * Too any weak and redundant inputs.
+    * Try a simpler algorithm.
+    * Grow less aggressively (try simpler).
+
+* ### Data reduction AKA Feature selections
+
+  * The removal of poor and redundant predictors before modeling.
+  * Don't the algorithms already do this?
+    * Trees and stepwise don't use all of the variables.
+    * Techniques like neural nets can assign low weights.
+    * Some implementations have extra features for this. E.g. there's a variation for KNN which performs feature selection.
+  * Why is it even a concern?
+    * No algorithm is immune to modeling noise. If a model performs worse in test data in comparison to training data, the 2 sets may have the same signal but different noise and the model will not work very well in production.
+  * What can be done?
+    * Try to run all of the **bivariates**. i.e. look for input vs output individually.
+    * Consider using one of the techniques as a screen before modeling. Eg. build a decision tree to screen and then build the neural net.
+    * Try to identify redundancy like Factor analysis, Confusion matrix etc.
+    * Like after adding BMI you don't need height and weight.
+    * Some implementations have dedicated features. Try with the feature turned on and off.
+    * Boosting can offer a powerful trick.
+  * Modeling challenges are best address empirically, just try things many different ways!
