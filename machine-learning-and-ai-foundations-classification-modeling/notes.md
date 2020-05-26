@@ -9,7 +9,7 @@
   * The goal of projects is one model. In real world usecases, we generally have multiple models sending info back and forth to make the final decision.
   * Binary classifiers play a role in all predictive analytics projects.
 
-* ### Binary vs Multinomial: :dancers
+* ### Binary vs Multinomial
 
   * The best part about binary classification is: there's a 50% chance of being correct to start with.
   * As we move into 3/4/5 categories the chances become 33%/25%/20%, even if we double the chances, 40% is still pretty bad.
