@@ -176,7 +176,7 @@
   * One of the most popular algorithms of the last decade
   * Black box technique
   * All inputs are used and it is robust even for a large number of inputs
-  * There is an important param: C that influences the bias-variance trade-off
+  * There is an important param: C that influences the bias-variance trade-off`
   * ![SVM with age and 2 groups](images/SVM_age.png)
   * ![SVM with age and class](images/SVM_age_class.png)
   * ![SVM with age and 2 groups](images/SVM_age_3_groups.png)
@@ -260,7 +260,7 @@
     * When a model is not **flexible** enough to get a sufficient signal i.e. not accurate enough. Eg. linear regression works only if there are linear relationships, if there's curvilinearity or variable interactions, it just won't work. In contrast, neural nets are inherently more flexible but they are a black box and complex.
     * Under fit.
   * High variance:
-    * Model is too sensitive, tis' picking up a lot of noise.
+    * Model is too sensitive, it's picking up a lot of noise.
     * If that's happening in training data, it'll do a lot worse in test data.
     * It's generalizing poorly.
     * Over fit.

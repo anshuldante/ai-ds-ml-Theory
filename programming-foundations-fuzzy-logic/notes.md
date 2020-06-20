@@ -1,3 +1,5 @@
+# Fuzzy Logic
+
 * Ambiguity is to have more than one answers or to have more than one solutions.
 * Contacts could mean contact lenses or phone contacts, hence it's an ambiguous term.
 * More daily life examples can be: tall, short, old, beautiful.

@@ -1,3 +1,5 @@
+# Data Science Foundations
+
 * **The pathway of Data-Science Projects:**
   * Planning
     1. Define goals
@@ -19,7 +21,7 @@
     2. Deploy model
     3. Revisit model
     4. Archive assets
-----
+
 * **The Roles in a data science team:**
   * Engineer
     * Developers and architects
@@ -48,7 +50,7 @@
     * Also known as a ROCKSTAR or NINJA
     * The full stack data scientist who can do it all
     * Very rare
-----
+
 * **How Humans learn:**
   * Memorisation is hard
   * Spotting patterns is easy.
@@ -57,17 +59,17 @@
   * Memorisation is easy.
   * Spotting patterns is hard
   * New situations are challenging.
-----
+
 * **Teach/Train machines:**
   * Show the algorithm millions of labeled examples
   * The algorithm then finds its own distinctive features
   * The algorithm may not be relevant or visible to humans.
-----
+
 * **Neural Networks**
   * The theory has existed for years.
   * The required computing power has caught up
   * The data availability has caught up, primarily due to social media
-----
+
 * **Data Science without ML:**
   * Any traditional classification task: Decision trees, kNN, k-mean
   * Predictive models
@@ -76,22 +78,22 @@
 * **ML without data Science:**
   * Can be done without domain expertise
   * Better when used in collaboration.
-----
+
 * **Neural Networks:**
   * Tiny steps with data leading to amazing analytical results
-----
+
 * **Prescriptive Analysis:**
   * RCT: randomised controlled trial
   * Theoretically simple
   * Practically complex in general
   * A/B testing for web-design is rather simple.
-----
+
 * **Good clean data characteristics:**
   * Column=variable
   * Row=case
   * One sheet per file
   * One level of observation
-----
+
 * **Untidy Spread sheet:**
   * Titles
   * Images and figures
@@ -114,12 +116,12 @@
   * Print tables
   * Print Graphs
   * Emojis have 10 different ways of representation.
-----
+
 * **Apps for data analysis:**
   * JASP
   * SPSS
   * jamovi
-----
+
 * **Python:**
   * Currently the most popular language for Data Science and Machine Learning
   * General purpose language
@@ -130,7 +132,7 @@
   * Popular with scientists and researchers.
 
 * *Tensorflow*
-----
+
 * **MLaaS: Machine Learning as a Service**
   * Microsoft Azure ML
   * Amazon Machine Learning
@@ -141,15 +143,15 @@
   * Put analysis where the data is stored
   * Flexible Computing Requirements.
   * Drag and Drop Interface
-----
+
 * **Baye's Theorem:**
   posterior probability = probability of data given the hypothesis * prior probability / probability of the data found
-----
+
 * **Regression Analysis Pros:**
   * Flexible Data
   * Flexible models
   * Easy to interpret.
-----
+
 * **Trend Analysis:**
   * Plot a graph
   * Find a Function against time
@@ -166,7 +168,7 @@
     * Overall Trend
     * Seasonal/cyclic trend
     * Random/Noise
-----
+
 * **Clustering:**
   * KNN
     * Plot the data in a K-dimensional space
@@ -175,7 +177,7 @@
   * Density models
   * Distribution models.
   * Linkage clustering models.
-----
+
 * **Classifying:**
   * How TO:
     * Locate case in k-dimensional space.
@@ -196,7 +198,7 @@
     * Specificity: true negative tests: Cases should only be categorised if they actually belong.
 
 * **Baye's Theorem:** combine data based on Sensitivity, Specificity and base rates.
-----
+
 * **Anomalies:**
   * Fraud detection
   * Process failure
@@ -216,29 +218,29 @@
 * **Properties of anomalies**
   * Rare events: frauds are uncommon which lead to unbalanced models
   * Difficult data: biometrics, multimedia, time-Sensitive signatures.
-----
+
 * **Dimensionality reduction: used in a earlier phase to get the data ready.**
   * Reduce the number of variables and data
   * Try to use a single score to make decisions.
   * When you combine many variables and features, the errors seem to cancel out in general
   * Reduces the collinearity.
   * Improves speed
-  * Improves generalisability
+  * Improves generalizability
   * Principle component analysis (PCA): take multiple correlated variables and combine then into a single score/component
   * Factor analysis: find the underlying common factor which gives rise to individual components.
-----
+
 * **Feature selection and creation: used after dimension selection and to find the best features to look at.**
   * Deciding the greatest decision value for a feature:
     * Correlation with the outcome: and the ones with bigger correlation have a higher decision value, one variable at a time so can take time and is linear.
     * Step-wise regression: put the data points into a computer and let the computer find the decision value: generally considered a bad choice, since variation in data can have huge impact.
     * LASSO and Ridge regression:: least absolute shrinkage and selection: more modern ways of regression that better handle flukes of chance variation, give better score for variables' role in the equation and emphasis
     * Variable importance: for neural networks.
-----
+
 * **Things to keep in mind while selecting variables:**
   * Is it something we can control?
   * ROI of the variable: cost vs value
   * Is it sensible, does it make sense to be looking at this variable?
-----
+
 * **Validating models:**
   * Always check your work.
   * Build using training data -> cross-validate using internal testing data -> holdout testing data: 20% of untouched data. This should give you the true test of your model.
@@ -251,10 +253,10 @@
     * Multiple perspectives
     * Find signal and Noise
     * More stable estimates
-    * More generalisable results.
+    * More generalizable results.
 
 * *Interpretability is critical!*
-----
+
 * **Actionable insights!**
   * Focus on controllable things.
   * Think practically: ROI

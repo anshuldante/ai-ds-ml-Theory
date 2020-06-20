@@ -1,3 +1,5 @@
+# AI Foundations: Thinking Machines
+
 * Symbolic systems approach (pattern matching), weak and string AI:
 * Symbol matching was assumed to be AI.
 * The Chinese room
@@ -6,18 +8,18 @@
 * Weak AI/Narrow AI: does limited tasks.
 * A system that uses symbolic systems approach, should be considered a weak AI.
 * Expert System: some experts input a lot of data and the outcomes based on it and the system uses these to respond to queries.
-----
+
 * **Planing AI:**
   * Plan AI: Using heuristics the AI predicts and limits the number of patterns to match against.
   Eg. Google Maps (it knows that there are only a limited number of possibilities); Legal Contracts, Logistics and Video Games.
   * For Planning AI to work, the heuristics should be correct, otherwise whatever they do after the first wrong assumption, everything will be incorrect.
-----
+
 * **Artificial Neural Networks:**
   * A biological brain has billions fo neurones, they connect to one another using signals using synapses.
   * Neurones increase the strength of the connections based on human experiences.
   * Eg. if you want to learn to juggle, your brain will create new neural connections and strengthen existing connections.
     * That's why you can often improve over time.
-  * Neurones in an AI are organised into layers, are arranged like players in a marching band.
+  * Neurones in an AI are organized into layers, are arranged like players in a marching band.
   * You start with the first player in the input layer, hop through all in between layers untill we get to the final output layer.
   * The players in between are called hidden layers.
   * The leaders in front won't have any instruments, their job is to listen to the music and pass individual notes to the players in the hidden layers.
@@ -42,14 +44,13 @@
   * Deep learning and Machine Learning are backed by the large amounts of data we have access to.
   * If you want a system to deduce if the uploaded image is a cat or not, you can just upload millions of cat images and let it learn.
 
-----
 * **Finding the right approach:**
   * Symbolic reasoning: abstract problem but known steps.
   * Machine learning: unknown steps but you still have to look for patterns. Requires iterations.
   * Some researchers mix the approaches, they use symbolic reasoning to come up with constraints and then use ML to experiment with different answers.
   * If you want to write an AI to recognize ceiling fan:
-    * If you use use symbolic reasoning: Have some experts define some attributes like location, manufacturers etc. going step by step and then making a decision.\
-    * Deep Learning: 
+    * If you use use symbolic reasoning: Have some experts define some attributes like location, manufacturers etc. going step by step and then making a decision.
+    * Deep Learning:
       * You'll pump in a lot of data. First you could train it to recognize fans using images and videos.
       * Then attach a sensor to detect changes in wind speed. Then it'll be able to detect patterns of wind moving in the room.
   * Symbolic reasoning will work for most ceiling fans. but it might fail on new designs.
@@ -57,17 +58,16 @@
     * If it uses wind speed patterns and hums for the whooshing sounds, it might do better than humans and detect in pitch dark rooms.
     * Requires access to too much data and a lot of other sensors to get it working.
 
-----
 * **Supervised and Unsupervised learning:**
   * Supervised Learning
     * After millions of tries with enough data, our AI might be able to play in input song well, but we might not know how it actually did that.
     * But still some human intervention might be required.
     * Say you want the layers behind the Input Layer to be able categorize the given songs.
     * In super, you give the AI enough sample data and categorize it for the AI.
-  * Unsupervised Learning: 
+  * Unsupervised Learning:
     * You just feed a LOT OF DATA and let it categorize, it might not be human relevant but the categorization will be better.
     * ADV: The categorization will be much more accurate. Eg. Apple music.
     * DisAdv: It may create too many categories which may be usable for humans.
-----
+
 * **Back-propagation:**
   *. Used on supervised learning, the developer provides a way for the program to know that it's going in the wrong direction and then go back and tweak/adjust the weights/gradients.
