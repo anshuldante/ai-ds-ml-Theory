@@ -105,4 +105,84 @@
 
 * ### Bootstrap Aggregating (Bagging)
 
-  * 
+  * Bagging is done by having multiple versions of a model and you just average of the results in case of scale or plurality in case of classification.
+  * The model version are run on Bootstrapped replicates of the training dataset.
+    * We basically choose some cases at random, and every time a case is picked, it's put back in. This means that it's possible that some of the cases will get picked multiple times and some others won't get picked at all.
+  * The point is, if we build a 100 trees on the same dataset, the resultant trees will all be the same, with bootstrapped replicates, we get some much needed variations in the datasets used in the various model runs.
+  * Bagging concentrates on reducing variance by averaging out the results of its various children trees.
+
+* ### Boosting
+
+  * Boosting increases the weights for the predictions that were wrong.
+  * Ada-boosting uses some complicated mathematics for calculating weights for the incorrect predictions. For simplicity, we'll just double the weights of the incorrect predictions.
+  * We can see the reduction in the number of failed predictions now.
+
+* ### Gradient Boosting
+
+  * In gradient boosting, we try and reduce the cost function to minimum.
+  * Cost basically means the sum of the differences between the observed and expected values for the incorrect predictions.
+
+## Important Ensemble Algorithms
+
+* ### Random Forest
+
+  * Bagged trees tend to be similar, even though we randomize the dataset.
+  * In case of random forests, a random selection of features is done.
+  * You want the component trees to be flexible, but aggregating makes the model more generalizable.
+  * No pruning in Random Forests.
+  * It's an old technique, but still a very famous one.
+
+* ### Model search by Bumping
+
+  * The point of this algorithm is that in Bagging once you start aggregating, the resultant model is not a tree anymore, so it uses the random samples to build multiple trees and then simply selects the best tree.
+  * Not a very famous tree, but still a good one to know.
+
+* ### AdaBoost, XGBoost, Light GBM. CatBoost
+
+  * AdaBoost: we find the incorrect rows and give them added weight.
+  * XGBoost: we define a loss function (eg. residual) and try to minimize it.
+  * Light GBM: is made to be scalable for larger datasets.
+  * CatBoost: tries to combat the issue of overfitting.
+
+* ### Super Learner, Subsemble, StackNet
+
+  * **Super Learner**
+    * In stacking we come up with a few models (3 in our example) and then feed the results of these models into a meta-learner which weighs these predictions and comes up with a meta-prediction.
+    * In case of stacking the basics differ in comparison to the other algorithms.
+    * Partitioning is different and cross-fold validation is generally used instead of training-test validation.
+    * We need access to a lot of algorithms for the component models, so that we can get strength from diversity.
+    * We have to make a good choice for the meta-learner, we chose CART because it's easy to understand. **General Linear Model, Generalized Linear Model and Deep Learning** are some of the examples of meta learners.
+    * We also have to take into account the kind of data that's being fed to us or the kind of results that are being produced by the level models before we choose the meta-learner.
+  * **Subsemble**
+    * It does the cross validation in a different way and that makes it much more stable.
+  * **StackNet (Deep stacking)**
+    * ![Sample StackNet](images/stacknet_sample.png)
+    * You have multiple layers of stacking between the inp[ut variables and the final prediction.
+    * Although it is similar to deep learning in some way, there is also a key difference. The weights are adjusted using backward propagation in case of deep learning whereas in deep stacking, the weights are adjusted in the forward direction.
+
+* ### Other things that are being worked on right now:
+
+  * Ensembles have gotten as complex as they can and they are very good at accuracy.
+  * In some business cases accuracy is as important as transparency.
+  * Two common strategies in use to achieve the new trend are:
+    * The first is, after the ensemble is built and demonstrated to be accurate, its then reduced to a simpler, more interpretable model on the backend.
+    * The other approach is to put constraints on the solution, a complex is model is built but in a way that it's easier to interpret.
+
+## Ensembles and Meta-Modeling Case Studies
+
+* ### Combining supervised and unsupervised learning
+
+  * We have the usecase of 10% kdd cup dataset here. We have to predict if the connection is normal or attack and if it an attack then of which type.
+  * The best way is to use multiple approaches and combine them. Not just averages or blend but use them in different ways.
+  * We use 1 model to classify them to decide if the connection detail is normal or not. We use C5.0 and then generate propensity scores for all connections, which are between 0 and 1, 0 means high propensity of not being and attack and 1 being high propensity of being an attack.
+  * The second model is used to predict the type of attack. Since there are multiple possibilities here, the probability of the model being right might be a little lower, but it will still be helpful so that the IT team can know where to look.
+  * The third model is a Kohenen map which is an unsupervised approach. We're trying to use it to divide attacks into common patterns and rare patterns. The rare patterns might be a new type of attack. After building the map, we try and calculate if the coordinates are rare or not. If the number of nodes on a coordinate is < 100, it's rare.
+  * We then put the results of the 3 models into a table and then use look into the 3 results in different ways. For ex. if a connection has a high propensity score, meaning that it's a normal connection but K-map says it's a rare cluster, we look into it anyway, since this could be a new type of attack.
+
+* ### Routing cases to different models
+
+  * We'll use kdd_98 data usecase for this one. The dataset has a lot of missing data, infact 0% of the rows in the dataset are complete.
+  * An observed pattern was, the missing data pattern for new users (RFA_3_FirstLetter = 'N') for older users.
+  * On analyzing the 2 groups further, we see that the favoured variables for the new users and for the old users are quite different, which further strengthens our belief that this might be a usecase where we can use 2 different models for the 2 groups.
+  * We end up building 2 different random forests for the 2 groups with different datasets and different variables.
+  * But finally we do combine them and the combination results in simple and similar propensity scores, although the scores come from 2 different models in different cases, the final model is very easy to use and deploy.
