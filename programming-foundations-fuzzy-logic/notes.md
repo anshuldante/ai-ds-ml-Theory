@@ -14,8 +14,8 @@
 * Precision: is the percentage of relevant documents retrieved vs the total relevant documents.
 * High precision generally means a low recall.
 * High recall would mean low precision:
-  a. if you get a lot of returns from a search, your precision is probably low.
-  b. As we add more and more keywords, we get higher precision and low recall.
-  c. With broader searches, we have higher recall but lower precision and that the results have fewer similarities.
+  1. if you get a lot of returns from a search, your precision is probably low.
+  2. As we add more and more keywords, we get higher precision and low recall.
+  3. With broader searches, we have higher recall but lower precision and that the results have fewer similarities.
 * Fuzzy inference: we use what we know about something to predict what we don't know or to get new data about it.
 * Neural networks and genetic algorithms are the most commonly used for building fuzzy logic systems.
