@@ -2,24 +2,24 @@
 
 * **Popular Algorithms:**
   * Decision Trees
-  * K-nearest neighbors: lazy learning: find the k nearest neighbors.
-  * K-mean Clustering: lazy learning: build k clusters of similar data.
-  * Regression
-    * Linear: based on past data, a predictor line is created and it's used to forecast future prospects.
-  * Naive Bayes: cause it assumes that all predictors are independent of each other.
+  * **K-nearest neighbors (lazy learning):** find the k nearest neighbors.
+  * **K-mean Clustering l(azy learning):** build k clusters of similar data.
+  * **Regression**
+    * **Linear:** based on past data, a predictor line is created and it's used to forecast future prospects.
+  * **Naive Bayes:** cause it assumes that all predictors are independent of each other.
     * Assigns a probability value for a new dataset belonging to a class for all classes based on all predictors.
       * Ex. classifying dogs based on their hair, height and weight assuming that the 3 predictors are independent.
     * Sometimes a weighted predictor factor is used to give preference to one or more of the predictors.
 
-* *Lazy Learning/Instance Based: run only when something has to be classified, take a lot of computation power.*
-* *Supervised: classify data*
-* *Unsupervised: cluster data*
+* **Lazy Learning/Instance Based:** runs only when something has to be classified, take a lot of computation power and time.
+* **Supervised**: classify data
+* **Unsupervised**: cluster data
 
-* *Bias: gap between predicted value and actual outcome.*
-* *Variance: when predicted values are scattered.*
+* **Bias**: gap between predicted value and actual outcome.
+* **Variance**: when predicted values are scattered.
 
-* *High bias and low variance: means predictions are consistently wrong.*
-* *High bias and high variance: consistently wrong in an inconsistent way.*
+* **High bias and low variance**: consistently wrong in a consistent way.
+* **High bias and high variance**: consistently wrong in an inconsistent way.
 
 ```python
     Eg.
