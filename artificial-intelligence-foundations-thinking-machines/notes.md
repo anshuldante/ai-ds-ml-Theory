@@ -1,6 +1,6 @@
 # AI Foundations: Thinking Machines
 
-* Symbolic systems approach (pattern matching), weak and string AI:
+* Symbolic systems approach (pattern matching), weak and strong AI:
 * Symbol matching was assumed to be AI.
 * The Chinese room
 * String AI/General AI: applies to a multitude of tasks.
