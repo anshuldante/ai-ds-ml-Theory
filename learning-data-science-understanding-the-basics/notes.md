@@ -34,21 +34,20 @@
 
 * You want your RDBMS to be fast and efficient since this will be used in real-time by customers.
 * A script is run to upload all of the data from a day to the DWH in one shot.
-* DWH is optimised for data analysis.
+* DWH is optimized for data analysis.
 * Let's say you get acquired, the parent company keeps the data of all of their websites in 1 DWH.
 * They'll have to do an ETL (extract, transform and load) to upload your data into their DWH.
-* They'll pull all of the data from your site, have a data analyst transform the data to match their schema
-   and then load it into their DWH.
-* Many companies see Hadoop as a replacement for their DWH, they'll change the ETL scripts to load the data from WFH to Hadoop.
+* They'll pull all of the data from your site, have a data analyst transform it to match their schema and then load it into their DWH.
+* Many companies see Hadoop as a replacement for their DWH, they'll change the ETL scripts to load the data from DFH to Hadoop.
 * The driver here is that Hadoop clusters are much cheaper than DWH.
 
 ## RDBMS Challenges
 
-* Aren't very flexible
+* Not very flexible
 * Require schema
-* Require planning and knowledge of the data in advance.
-* Data formats are a challenge.
-* Requires relations as well.
+* Require planning and knowledge of the data in advance
+* Data formats are a challenge
+* Also requires data relations in advance
 
 ## NoSQL DBs are supposed to have the following properties
 
@@ -56,8 +55,8 @@
 * Schema-less
 * Cluster-friendly
 * Open-source
-* *Hadoop is built on HBase which is an open-source NOSQL DB.*
-* *Big data PROBLEM, with the emphasis on the problems with managing a lot of data.*
+* Hadoop is built on HBase which is an open-source NoSQL DB
+* Big data **PROBLEM**, with the emphasis on the problems with managing a lot of data
 
 ## The 4 Vs
 
@@ -67,7 +66,7 @@
   * The best example is: auto-driving cars: having to process video, audio, maps and other related data to be able to drive safely.
 * Velocity
 * Veracity
-* **For a data related problem to be classified as a Big Data PROBLEM, it should have all 4 Vs.**
+  For a data related problem **to be classified as a Big Data PROBLEM, it should have all 4 Vs.**
 
 ## Types of Data
 
@@ -85,23 +84,26 @@
   * Time consuming to delete.
 * Arguments to delete data:
   * Important to deal with the garbage: the more garbage data you have the harder it gets to get interesting results.
-  * Harder get get better insights: the garbage data is called Noise.
+  * The garbage data adds to the noise while trying to identify patterns.
 * Comparison:
   * No right answer here
-  * The DS team just has to find what works for them.
-  * More data means more noise and more filtering required and more time spent on analysing data.
-  * Throwing away means cleaner data but time spent on cleaning it and there is a chance that you'll throw away somewhat useful data
-    that you might regret throwing away in the future.
-  * Making a decision is important and make it early, changing the policy every now and then is not a great idea.
+  * The DS team just has to find what works for them
+  * More data means more noise and more filtering required and more time spent on analyzing data
+  * Throwing away means cleaner data but time spent on cleaning it and there is a chance that you'll throw away some useful data that you might regret throwing away in the future.
+  * Making a decision and and making it early is very important, changing the policy every now and then is not a great idea.
 
 ## Applying statistics to data
 
 * Shouldn't always believe statistics, in the end, it is like story telling, could have facts, fiction and fantasy.
-* Eg. politics: 1 guy says the average voter income has gone up by 5000 in the last 4 years,
-  the other guys says average middle-class family income has gone down by 10000.
-  The first guy took the mean of all voter incomes. The second guy is talking about the median of all families.
-  The first stat is not that great, because the income could've been taken up by the wealthiest.
-  But since the number of families hasn't really changed, the median shouldn't change either.
+
+  ```python
+  Eg. politics: 
+    * 1 guy says the average voter income has gone up by 5000 in the last 4 years,
+    * The other guys says average middle-class family income has gone down by 10000.
+    * The first guy took the mean of all voter incomes. The second guy is talking about the median of all families.
+    * The first stat is not that great, because the income could've been taken up by the wealthiest.
+    * But since the number of families hasn't really changed, the median shouldn't change either.
+  ```
 
 ## Probability practical usage: an analysis done by a biotech company to find out the reasons for people not participating in a clinical trial
 
@@ -165,7 +167,7 @@
 ## Challenges**
 
 * *Building monuments of data waiting for the results to come.*
-* *Orgs focus on capabilities and spend a lot of money on hardware and stuff and then have nothing left for the DS team.*
+* *Organizations focus on capabilities and spend a lot of money on hardware and stuff and then have nothing left for the DS team.*
 * *DS teams are exploratory, data is not the product, just the means to get analytics and there's no prize to having the biggest data clusters.*
   * Having a chef knife doesn't make you a chef. The DS team can often get more done with multiple ope-source tools than a paid single one.
 * *A good DS team will be very messy, they'll use various different tools to collect and scrub data.*
