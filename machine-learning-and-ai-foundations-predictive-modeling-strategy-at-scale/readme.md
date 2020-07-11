@@ -129,7 +129,7 @@
     * For ex. dates may not be relevant in general but the gaps might be
     * The days of week might also provide some key insights.
     * The VIN number for a vehicle may not amount to much, but the second character tells about the manufacturer of the vehicle.
-    * Extracting the boolean Luggage_Fee_concept=true from the comment *My bad was lost but I still had to pay the bag fee*
+    * Extracting the boolean Luggage_Fee_concept=true from the comment *My bag was lost but I still had to pay the bag fee*
   * In a project, the team had 800+ variables but the DWH only provided 60, the rest were engineered. The final model only used 80 but only 6 of them came directly from the DWH
   * These calculation are important since they will become a part of the deployment and scoring process.
 
@@ -148,9 +148,9 @@
     * Random forests
     * XGBoost
     * Lots of individual models
-      * Tens of thousands is SKUs
+      * Tens of thousands SKUs
       * Hundreds of store locations
-      * One model per store per SKU.
+      * One model per store per SKU
       * Can't go for slow algorithms
       * Ended up selecting **Logistic Regression**
 
@@ -192,7 +192,7 @@
   * Are just models that have become very complex, so it becomes hard to tell a story about them i.e. they can't be interpreted very easily.
   * But they are very accurate and they come in multiple forms
   * There are a lot of complex coefficients, so migrating the model can be a challenge.
-  * **PMML can be helpful in migrating such models.**
+  * **PMML (Predictive Model Markup Language) can be helpful in migrating such models.**
 
 * #### Ensemble models
 
@@ -212,16 +212,16 @@
 * The issues with batch scoring are:
   * When did you create the score?
   * When did you send the offer?
-* Real-time is many times more costlier than Batch, but we have to keep the following things in mind:
+* Real-time is many times costlier than Batch, but we have to keep the following things in mind:
   * What is the increase in cost? Do we have the budget for it?
   * Is it mission critical? After these 2, it's assumed that realtime > batch
-  * How often do the variables change? For ex. if the scores are only dependent monthly statements, there is no need for generating the scores nightly.
+  * How often do the variables change? For ex. if the scores are only dependent on monthly statements, there is no need for generating the scores nightly.
   * What is the increase in accuracy? For ex. if your model is dependant on monthly and daily changing variables, you build the model on the slow variables and then slow and fast both. This tells you the accuracy difference between the slow and fast variables
   * What is the natural rhythm of the business?
 
 * #### Data Prep & Scoring
 
-  * A sample:
+  * **A sample:**
     * A company had 8 monthly billing cycles.
     * Data prep was done at 1 AM in the morning.
     * New scores were calculated at 20 AM.
@@ -230,7 +230,7 @@
     * Not all variables are used.
     * Not all formulas are built for speed.
     * Historical data is not identical to scoring data.
-    * Ad hoc sources are made more permanent.
+    * Ad-hoc sources are made more permanent.
     * Moving data prep code from modelling to Production is a non-trivial event and teams have to work together to get it out the door.
 
 * #### Combining Batch and Real-Time
