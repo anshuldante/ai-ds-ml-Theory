@@ -3,8 +3,8 @@
 * Symbolic systems approach (pattern matching), weak and strong AI:
 * Symbol matching was assumed to be AI.
 * The Chinese room
-* String AI/General AI: applies to a multitude of tasks.
-  Eg. a string AI might learn a new language just for the joy.
+* Strong AI/General AI: applies to a multitude of tasks.
+  Eg. a strong AI might learn a new language just for the joy.
 * Weak AI/Narrow AI: does limited tasks.
 * A system that uses symbolic systems approach, should be considered a weak AI.
 * Expert System: some experts input a lot of data and the outcomes based on it and the system uses these to respond to queries.
