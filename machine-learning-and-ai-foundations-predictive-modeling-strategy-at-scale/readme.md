@@ -2,15 +2,15 @@
 
 ## **Data Bottlenecks**
 
-* Store: the myth of storing all = model all
-* Assess: how much do I have? How much do I need?
-* Select: rationale for inclusion and exclusion
-* Integrate: merge. append and aggregate
-* Explore: what patterns are there in the data? What data quality issues do I have?
-* Prepare: transforming the data into a form that the models need
-* Model: data < All, shouldn't worry about data size anymore, the data at hand is now clean, relevant and ready for use.
-* Score: should be focused on speed.
-* Maintain: rebuilding the model, try and automate all of the steps so that manual intervention is minimal after going LIVE.
+* **Store**: the myth of storing all = model all
+* **Assess**: how much do I have? How much do I need?
+* **Select**: rationale for inclusion and exclusion
+* **Integrate**: merge, append and aggregate
+* **Explore**: what patterns are there in the data? What data quality issues do I have?
+* **Prepare**: transforming the data into a form that the models need
+* **Model**: data < All, shouldn't worry about data size anymore, the data at hand is now clean, relevant and ready for use.
+* **Score**: should be focused on speed.
+* **Maintain**: rebuilding the model, try and automate all of the steps so that manual intervention is minimal after going LIVE.
 
 ### **Reducing Data Size**
 
