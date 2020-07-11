@@ -3,7 +3,7 @@
 * **The pathway of Data-Science Projects:**
   * Planning
     1. Define goals
-    2. Organise resources
+    2. Organize resources
     3. Coordinate people.
     4. Schedule Project.
   * Wrangling/prepping the data
@@ -36,7 +36,7 @@
     * Statistical expertise
   * Analyst
     * Data-to-data tasks
-    * Web Analytics, SQL, visualisations.
+    * Web Analytics, SQL, visualizations.
     * Good for business decision making
   * Manager
     * Manage data science projects
@@ -47,16 +47,16 @@
     * Often need all skills including business
     * Creativity in planning and execution
   * The "UNICORN"
-    * Also known as a ROCKSTAR or NINJA
+    * Also known as a ROCK-STAR or NINJA
     * The full stack data scientist who can do it all
     * Very rare
 
 * **How Humans learn:**
-  * Memorisation is hard
+  * Memorization is hard
   * Spotting patterns is easy.
   * React well to new situations.
 * **How Machines Learn:**
-  * Memorisation is easy.
+  * Memorization is easy.
   * Spotting patterns is hard
   * New situations are challenging.
 
@@ -71,8 +71,8 @@
   * The data availability has caught up, primarily due to social media
 
 * **Data Science without ML:**
-  * Any traditional classification task: Decision trees, kNN, k-mean
-  * Predictive models
+  * Any traditional classification task: Decision trees, kNN, k-means
+  * Predictive modeling
   * Sentiment analysis
 
 * **ML without data Science:**
@@ -80,13 +80,13 @@
   * Better when used in collaboration.
 
 * **Neural Networks:**
-  * Tiny steps with data leading to amazing analytical results
+  * Tiny steps with data, leading to amazing analytical results
 
 * **Prescriptive Analysis:**
-  * RCT: randomised controlled trial
+  * **RCT: randomized controlled trial**
   * Theoretically simple
   * Practically complex in general
-  * A/B testing for web-design is rather simple.
+  * **A/B testing** for web-design is rather simple.
 
 * **Good clean data characteristics:**
   * Column=variable
@@ -104,7 +104,7 @@
   * Comments and notes
 
 * **Further problems with somewhat clean data:**
-  * Meaning of Values and variables
+  * Meanings of values and variables
   * Missing values
   * Misspelled text
   * Numbers as text
@@ -112,15 +112,10 @@
   * Sample Info
 
 * **Some more challenging input data mediums:**
-  * Print PDFs
-  * Print tables
-  * Print Graphs
-  * Emojis have 10 different ways of representation.
-
-* **Apps for data analysis:**
-  * JASP
-  * SPSS
-  * jamovi
+  * Printed PDF
+  * Printed tables
+  * Printed Graphs
+  * Emojis (have 10 different ways of representation)
 
 * **Python:**
   * Currently the most popular language for Data Science and Machine Learning
@@ -131,7 +126,7 @@
   * Specifically developed for Data Analysis
   * Popular with scientists and researchers.
 
-* *Tensorflow*
+* **Tensorflow**
 
 * **MLaaS: Machine Learning as a Service**
   * Microsoft Azure ML
@@ -144,7 +139,7 @@
   * Flexible Computing Requirements.
   * Drag and Drop Interface
 
-* **Baye's Theorem:**
+* **Bayes Theorem:**
   posterior probability = probability of data given the hypothesis * prior probability / probability of the data found
 
 * **Regression Analysis Pros:**
@@ -185,19 +180,19 @@
     * Assign the new case to a category
   * Algorithms:
     * K-Means: assign case to the closest of k centroids.
-    * KNN: use the most common category of the k closest neighbours of the new case.
+    * KNN: use the most common category of the k closest neighbors of the new case.
   * Types:
     * Binary: yes/no
     * Multiple categories: pics, emails etc.
-    * Distance measures: euclidian distance etc.
-    * Compare it to one or more central or centriod Points
+    * Distance measures: Euclidean distance etc.
+    * Compare it to one or more central or centroid Points
     * Confidence level
-  * Correctness of the algo:
+  * Correctness of the algorithm:
     * Total accuracy: generic accuracy, may not always work too well
     * Sensitivity: the true positivity test: if some data is supposed to be in a category, what's the likely-hood of it getting classified in the correct category.
-    * Specificity: true negative tests: Cases should only be categorised if they actually belong.
+    * Specificity: true negative tests: Cases should only be categorized if they actually belong.
 
-* **Baye's Theorem:** combine data based on Sensitivity, Specificity and base rates.
+* **Bayes Theorem:** combine data based on Sensitivity, Specificity and base rates.
 
 * **Anomalies:**
   * Fraud detection
@@ -223,9 +218,9 @@
   * Reduce the number of variables and data
   * Try to use a single score to make decisions.
   * When you combine many variables and features, the errors seem to cancel out in general
-  * Reduces the collinearity.
+  * Reduces the collinearity
   * Improves speed
-  * Improves generalizability
+  * Improves generalizing ability
   * Principle component analysis (PCA): take multiple correlated variables and combine then into a single score/component
   * Factor analysis: find the underlying common factor which gives rise to individual components.
 
@@ -245,7 +240,7 @@
   * Always check your work.
   * Build using training data -> cross-validate using internal testing data -> holdout testing data: 20% of untouched data. This should give you the true test of your model.
 
-* **Aggression models:**
+* **Aggregation models:**
   * Combine the results of several different models.
   * Take the most common category from the models.
   * Average prediction in case of quantitative things.
