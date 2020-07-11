@@ -29,25 +29,26 @@
     4. 2 hit the outer circle, 2 went behind and 1 fell below: high bias and high variance.
 ```
 
-* *Under-fitting: the model created using training-set is too simple and doesn't work well for larger datasets.*
-* *Overfitting: the model created using training-set is too complex and almost impossible to understand.*
+* **Under-fitting**: the model created using training-set is too simple and work well neither for training data nor unseen data.
+* **Overfitting**: the model created using training-set fits the training dataset too much and doesn't work well for new data.
 
 ```python
 Eg. a website that connects buyers with sellers.
-  The predictors we started with are:
+  The predictors were:
     1. Square footage
     2. Location
     3. Number of bathrooms.
     4. Number of beds.
-  The model had a high variance and house with the same predictor values have very different prices.
-  So we add new predictors: quality of view, modern appliances and walk-ability.
-  This makes the model more flexible since there are more predictors to be considered.
+  The model had a high variance and even houses with the same predictor values had very different prices.
+  So new predictors were added: *quality of view, modern appliances and walk-ability*.
+  This made the model more flexible since there were more predictors to be considered now.
   Now we could have a very complex model which will be really hard to understand.
+  And it may not work well with new data.
 ```
 
-* *Signal is something you can use to make accurate predictions.*
-* *Noise is the natural variance in data which may not offer any insights.*
-* *The goal is to capture as much as possible of the signal and not get distracted by the noise.*
+* **Signal** is something you can use to make accurate predictions.
+* **Noise** is the natural variance in data which may not offer any insights.
+* The goal is to **capture as much as possible of the signal and not get distracted by the noise.**
 
 * **Making decisions:**
   * Labeled data: Supervised
@@ -69,7 +70,7 @@ Eg. a website that connects buyers with sellers.
     * Stacking: stack different algorithms on top of each other to improve results.
 
 * **Challenges:**
-  * *Making sure that the people in the org can ask interesting questions.*
-  * *Keeping training and testing data separate: mixing training data into testing data means giving the algorithm the right answers.*
-  * *Time investment: not to invest too much time finding the right algorithm.*
-  * *Don't be concerned about a high bias towards an algorithm, it might just make sense to you.*
+  * Making sure that the people in the org can ask interesting questions.
+  * Keeping training and testing data separate: mixing training data into testing data means giving the algorithm the right answers.
+  * Time investment: not to invest too much time finding the right algorithm.
+  * Don't be concerned about a high bias towards an algorithm, it might just make sense to you.
