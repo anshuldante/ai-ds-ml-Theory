@@ -3,29 +3,26 @@
 ## **What is Data Mining and Predictive Analytics**
 
 * Find previously unknown relationships to produce positive and verifiable outcomes through predictive models which can be deployed to new data.
-* The data is not new
-* The data being used was collected for a business usecase
-* Proof
-* Useful
-* Must work on new data
+* The data being used to build the model is not new, it was collected for a business usecase
+* The mode should be useful, and there should be proof that it works
+* It must work on new data
 * At the very basic, a predictive model is a bunch of rule-sets
 
 * ### Problem Definition
 
-  * Determine the business objective and translate into a decision to be made
+  * Determine the business objective and translate it into a decision to be made
     * Making a specific decision
     * Meeting a particular need
     * Creating a measurable goal.
     * It should be deployed
     * Same recurring decision
-    * Two possible outcomes
-  * Identify an intervention strategy:
+    * if possible, two possible outcomes
+  * Identify an intervention strategy
     * Individual level
     * Time sensitive
     * Plan of action
   * Estimate the return on investment
-    * There should be something to gains
-    * Tangible benefit
+    * There should be something to gain, i.e. there's gotta be some tangible benefit
     * Measurable: money earned, money saved or time saved.
     * Estimate the potential benefit
   * Program management
@@ -36,9 +33,8 @@
 
   * **Customer footprint**
     * Using the past to predict the future
-    * Ongoing process, we use the data from the past and try to find patterns in current data to draw conclusions.
+    * Ongoing process, we use the data from the past and try to find patterns in current data to draw conclusions
     * Known outcome
-    * Customer footprint
   * **Flat File**
     * Rows and columns
     * Specific form
@@ -52,7 +48,7 @@
     * What is the deployment plan?
   * **Understand integration**
     * Lots of sources
-    * Both internal and external (weather or unstructured data)
+    * Both internal and external (weather or not there's unstructured data)
     * The tougher, the better
   * **Understand data construction**
     * Just one aspect but very very important
@@ -110,7 +106,7 @@
 ## **Finding the solution**
 
 * **Search the solution space**
-  * Nothing to prove: if you're verifying an outcome having chosen the variables an predictors right, you're not doing data mining.
+  * Nothing to prove: if you're verifying an outcome having chosen the variables and predictors right, you're not doing data mining.
     * It is not testing hypotheses.
     * Data mining is data driven and exploratory
     * Validation is not the same as hypothesis testing.
@@ -179,8 +175,8 @@
 
 * ### Understanding laws 1 and 2
 
-  * Law 1: Business objectives are the origin of ever data mining solution
-  * Law 1: Business objectives is central to every step of the data mining process
+  * Law 1: Business objectives are the origin of every data mining solution
+  * Law 2: Business objective is central to every step of the data mining process
 
 * ### Understanding law 3
 
