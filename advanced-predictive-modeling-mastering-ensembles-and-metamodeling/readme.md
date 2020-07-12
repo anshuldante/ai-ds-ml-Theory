@@ -30,7 +30,7 @@
     * Sometimes built iteratively
   * Metamodeling
     * Models working together to solve a problem.
-    * Models could be sending into to other models, not as simple as an average.
+    * Models could be sending info to other models, not as simple as an average.
     * Different models could be for different cases.
 
 ## Understanding Model Error
@@ -75,7 +75,7 @@
   * Our motivation for using ensembles is generally to reduce bias or variance, and if we're lucky, both!
   * **Variance** refers to the amount by which our model would change if we estimated it using a different training data set.
   * **Bias** refers to the error that is introduced by approximating a real-life problem, which may be extremely complicated, using a much simpler model.
-  * Noise is sometimes called **Irreducible Error**, and this may not be something we can do anything about it.
+  * Noise is sometimes called **Irreducible Error**, and this may not be something we can do anything about.
   * Another way to put these 2 is: Bias is a learner's tendency to consistently learn the same wrong thing. Variance is the tendency to learn random things irrespective of the real signal.
 
 * ### Visualizing bias and error
@@ -105,11 +105,11 @@
 
 * ### Bootstrap Aggregating (Bagging)
 
-  * Bagging is done by having multiple versions of a model and you just average of the results in case of scale or plurality in case of classification.
-  * The model version are run on Bootstrapped replicates of the training dataset.
+  * Bagging is done by having multiple versions of a model and you just average out the results in case of scale or plurality in case of classification.
+  * The model versions (child trees) are run on Bootstrapped replicates of the training dataset.
     * We basically choose some cases at random, and every time a case is picked, it's put back in. This means that it's possible that some of the cases will get picked multiple times and some others won't get picked at all.
   * The point is, if we build a 100 trees on the same dataset, the resultant trees will all be the same, with bootstrapped replicates, we get some much needed variations in the datasets used in the various model runs.
-  * Bagging concentrates on reducing variance by averaging out the results of its various children trees.
+  * Bagging concentrates on reducing variance by averaging out the results of its various child trees.
 
 * ### Boosting
 
@@ -166,15 +166,15 @@
   * In some business cases accuracy is as important as transparency.
   * Two common strategies in use to achieve the new trend are:
     * The first is, after the ensemble is built and demonstrated to be accurate, its then reduced to a simpler, more interpretable model on the backend.
-    * The other approach is to put constraints on the solution, a complex is model is built but in a way that it's easier to interpret.
+    * The other approach is to put constraints on the solution, a complex model is built, but in a way which is easier to interpret.
 
 ## Ensembles and Meta-Modeling Case Studies
 
 * ### Combining supervised and unsupervised learning
 
-  * We have the usecase of 10% kdd cup dataset here. We have to predict if the connection is normal or attack and if it an attack then of which type.
+  * We have the usecase of 10% kdd cup dataset here. We have to predict if the connection is normal or attack and if it is an attack, then of which type.
   * The best way is to use multiple approaches and combine them. Not just averages or blend but use them in different ways.
-  * We use 1 model to classify them to decide if the connection detail is normal or not. We use C5.0 and then generate propensity scores for all connections, which are between 0 and 1, 0 means high propensity of not being and attack and 1 being high propensity of being an attack.
+  * We use 1 model to classify them to decide if the connection detail is normal or not. We use C5.0 and then generate propensity scores for all connections, which are between 0 and 1, 0 means high propensity of not being an attack and 1 being high propensity of being an attack.
   * The second model is used to predict the type of attack. Since there are multiple possibilities here, the probability of the model being right might be a little lower, but it will still be helpful so that the IT team can know where to look.
   * The third model is a Kohenen map which is an unsupervised approach. We're trying to use it to divide attacks into common patterns and rare patterns. The rare patterns might be a new type of attack. After building the map, we try and calculate if the coordinates are rare or not. If the number of nodes on a coordinate is < 100, it's rare.
   * We then put the results of the 3 models into a table and then use look into the 3 results in different ways. For ex. if a connection has a high propensity score, meaning that it's a normal connection but K-map says it's a rare cluster, we look into it anyway, since this could be a new type of attack.
@@ -182,7 +182,7 @@
 * ### Routing cases to different models
 
   * We'll use kdd_98 data usecase for this one. The dataset has a lot of missing data, infact 0% of the rows in the dataset are complete.
-  * An observed pattern was, the missing data pattern for new users (RFA_3_FirstLetter = 'N') for older users.
+  * An observed pattern was, the missing data pattern for new users (RFA_3_FirstLetter = 'N') vs for older users.
   * On analyzing the 2 groups further, we see that the favoured variables for the new users and for the old users are quite different, which further strengthens our belief that this might be a usecase where we can use 2 different models for the 2 groups.
   * We end up building 2 different random forests for the 2 groups with different datasets and different variables.
   * But finally we do combine them and the combination results in simple and similar propensity scores, although the scores come from 2 different models in different cases, the final model is very easy to use and deploy.

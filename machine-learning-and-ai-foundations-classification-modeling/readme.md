@@ -5,7 +5,7 @@
 * ### Importance of Binary Classification
 
   * There are two famous myths regarding classification:
-  * Each usecase = One best Algorithm, and if we define the problem properly, we'll kno which one to use. In general, this is a one-to-many relation between the problems and the solutions.
+  * Each usecase = One best Algorithm and if we define the problem properly, we'll know which one to use. In general, there is a one-to-many relation between problems and their solutions.
   * The goal of projects is one model. In real world usecases, we generally have multiple models sending info back and forth to make the final decision.
   * Binary classifiers play a role in all predictive analytics projects.
 
@@ -22,9 +22,8 @@
 
   * Neural networks
   * An ensemble of models: Random forest
-  * To explain or to predict?
-  * If the explanation is required, skip the black box techniques.
-  * The older techniques persist because they are the best option.
+  * If an explanation for the model is required, skip the black box techniques.
+  * The older techniques persist because they are the best option in some usecases.
 
 * ### One task, many algorithms
 
@@ -69,13 +68,13 @@
   * Interactions between variables: do the variables contribute to the model individually or they interact with each other?
   * Missing data handling
   * Over-fitting/under-fitting: not complex enough will lead to lower accuracy, too complex and it won't fix the new data well.
-  * Feature selection: how does it determining which variables to use and how important those variables will be.
+  * Feature selection: how does it determine which variables to use and how important those variables will be.
 
 * ### Things to attend to
 
   * Does it use all or some of the variables?
   * Does it use all or some of the test data?
-  * Situations where the model will perform well or bad.
+  * Situations where the model will perform well or badly.
 
 * ### Discriminants (Linear Discriminant Analysis) with three categories
 
@@ -88,8 +87,8 @@
 
 * ### Discriminants with two categories
 
-  * Typically operates on list-wise deletion of missing data.
-  * Some implementations will impute
+  * Typically operates on list-wise deletion (delete the whole row if any value is missing) of missing data.
+  * Some implementations will impute (predict the missing value by using its relation with other values)
   * Typically all inputs are used
   * Stepwise variable selection
   * Scale variables only
@@ -106,7 +105,7 @@
     * We can maybe try to include a few more variables and remove the weaker ones.
     * ![Fischer Coefficients](images/titanic_disc_2_fischer_coefficients.png)
     * The decision here is rather simple, we calculate the score for survival and death by sum (coefficients * variable_value).
-    * Whichever score is bigger, the selected person is predicted to be dead.
+    * the selected person is predicted to be dead/alive, based on whichever score is bigger
 
 * ### Stepwise discriminants
 
@@ -130,7 +129,7 @@
   * Titanic usecase with the same variables
   * Y = B1*X1 + B2*X2 + .... + constant
   * Score = 1 / ( 1 + exp(-(Y)))
-  * The detailed coefficients are what make statisticians prefer it.
+  * The detailed coefficients are what makes statisticians prefer it.
   * ![Plot with 3 categories](images/log_reg_confusion_matrix.png)
   * ![Fischer Coefficients](images/log_reg_coefficients.png)
   * You still want to improve the model and not dismiss it as is, maybe the less significant embarked was the issue or maybe some other variables need to be included.
@@ -187,7 +186,7 @@
   * Deep learning is a special kind of neural network.
   * We will discuss multilayer perceptrons
   * Black box technique
-  * All inputs are used - input screening is often helpful
+  * All inputs are used - input screening (analyzing variables for importance) is often helpful
   * Backward propagation
   * Titanic usecase: age, passenger class, embarked and sex.
   * ![Sample neural network](images/neural_net_sample.png)
@@ -195,15 +194,14 @@
 
 * ### Bayesian networks
 
-  * Bayes' theorem is about combining probabilities
+  * Bayes theorem is about combining probabilities
   * Three ways of addressing interactions
-  * Naive Bayes an Bayesian networks are not the same
+  * Naive Bayes and Bayesian networks are not the same
   * Unique since an SME could design the network and then fit the data
   * Titanic usecase: age, passenger class, embarked and sex.
   * ![Interactions](images/interaction_table.png)
   * This is not scalable, since even with 4 variables we have a lot of possibilities.
   * Naive Bayes' doesn't test any interactions.
-  * ![Bayesian Network Embarked](images/bayesian_network_pclass.png)
   * ![Conditional Probabilities of Pclass](images/conditional_probabilities_pclass.png)
   * ![Bayesian Network Embarked](images/bayesian_network_embarked.png)
   * ![Conditional Probabilities of Pclass](images/conditional_probabilities_embarked.png)
@@ -246,10 +244,10 @@
 * ### Missing data
 
   * Decision trees are the only exception to the rule
-  * List-wise deletion is the most common
-  * Be careful when trees consistently, you'll want to check how many records were actually run by the other algorithms due to missing data. People don't always realize this.
+  * List-wise deletion is the most common approach
+  * Be careful though, you'll want to check how many records were actually run by the other algorithms due to missing data. People don't always realize this, but if the dataset has a lot of missing data, the data left post list-wise deletion may not be enough.
   * Imputation
-    * Can be as simple as replacing the mean
+    * Can be as simple as replacing with the mean
     * Can be as complex as a neural network, if age is missing, you might use all of the other variables to predict the **age** value.
     * Too important to leave to chance, there's a big difference between 2% and 30%.
   * These are not the only solutions, in some cases, you might want to build a model for complete data and another one from incomplete data.
@@ -272,11 +270,11 @@
     * Might need to add more input variables.
     * Grow more aggressively.
   * If you have high variance
-    * Too any weak and redundant inputs.
+    * Too many weak and redundant inputs.
     * Try a simpler algorithm.
     * Grow less aggressively (try simpler).
 
-* ### Data reduction AKA Feature selections
+* ### Data reduction AKA Feature selection
 
   * The removal of poor and redundant predictors before modeling.
   * Don't the algorithms already do this?
@@ -286,10 +284,10 @@
   * Why is it even a concern?
     * No algorithm is immune to modeling noise. If a model performs worse in test data in comparison to training data, the 2 sets may have the same signal but different noise and the model will not work very well in production.
   * What can be done?
-    * Try to run all of the **bivariates**. i.e. look for input vs output individually.
+    * Try to run all of the **bi-variates**. i.e. look for input vs output individually.
     * Consider using one of the techniques as a screen before modeling. Eg. build a decision tree to screen and then build the neural net.
     * Try to identify redundancy like Factor analysis, Confusion matrix etc.
     * Like after adding BMI you don't need height and weight.
     * Some implementations have dedicated features. Try with the feature turned on and off.
-    * Boosting can offer a powerful trick.
+    * Boosting can offer a powerful insight.
   * Modeling challenges are best address empirically, just try things many different ways!
